@@ -1,0 +1,42 @@
+<div class="container">
+    <h3>{{name}}</h3>
+
+    <label>Change the title</label>
+    <input 
+    type="text"
+    class="form-control"
+    (input)="onTypeLetter($event)">
+
+    <div class="container">
+        <button class="btn btn-primary" (click)="changeBooleanValue()">Change boolean value</button>
+    </div>
+    <br/>
+    <button class="btn btn-primary" [disabled]="booleanValue">Generic button</button>
+    <p [innerText]="booleanValue"></p>
+    <button class="btn btn-primary" [disabled]="booleanValue" (click)="myFunction()">Click me!</button>
+    <p>{{myVariable}}</p>
+
+
+
+    <!-- Add forms module to app.module.ts
+    imports: FormsModule
+    import { FormsModule }   from '@angular/forms';-->
+    <input [(ngModel)]="myNgModel">
+    <p>{{myNgModel}}</p>
+
+    <p *ngIf="!booleanValue">ngIf</p>
+
+    <p *ngIf="!booleanValue; else noServer">ngIfElse - if</p>
+    <ng-template #noServer>
+      <p>else</p>
+    </ng-template>
+
+    <p *ngFor="let fruit of fruits">Fruit: {{fruit}}</p>
+
+    <!-- dynamically update the style-->
+    <p [ngStyle]="{backgroundColor: getColor()}">Dynamic styles</p>
+
+    <!-- dynamically update the classes-->
+    <p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{true: booleanValue == true}">Dynamic classes and styles</p>
+</div>
