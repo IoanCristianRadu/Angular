@@ -1,11 +1,14 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewPostComponent } from './new-post/new-post.component';
+import { PostsComponent } from './posts/posts.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-  { path: 'hello',   component: HelloWorldComponent },
-  { path: 'dashboard', component: DashboardComponent}
+  { path: '', redirectTo: "posts", pathMatch: "full"},
+  { path: 'new',   component: NewPostComponent },
+  { path: 'posts', component: PostsComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
