@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+
+@NgModule()
 
 @Component({
   selector: 'app-posts',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts: Post[] = [new Post("Title","Text1")]
+  title: String = "";
+  content: String = "";
+  posts: Post[] = [];
+  myNgModel = "";
 
   constructor() {
     this.posts.push(new Post("Title","Text1"));
@@ -18,14 +23,24 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPost(){
+    if(this.title != "" && this.content != "") {
+      this.posts.push(new Post(this.title,this.content));
+    }
+  }
+
+  dismissPost (){
+    return "modal";
+  }
+
 }
 
 class Post {
   title;
-  text;
+  content;
   constructor(title, text) {
     this.title = title;
-    this.text = text;
+    this.content = text;
   }
 
   // Getter
@@ -34,7 +49,7 @@ class Post {
   }
   // Method
   combineTitleText() {
-    return this.title * this.text;
+    return this.title * this.content;
   }
 
 }
