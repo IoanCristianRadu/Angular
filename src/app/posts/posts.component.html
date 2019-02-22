@@ -1,46 +1,52 @@
-<!-- Button trigger modal -->
 <div class="container">
-  <button type="button" class="btn btn-primary fixedTopLeft" data-toggle="modal" data-target="#exampleModalCenter">
-      New post
-    </button>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">New post</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <!--Form-->
-            <form class="was-validated">
-              <div class="mb-3">
-                <label for="Title">Title</label>
-                <textarea class="form-control" id="Title" [(ngModel)]="title" name="title" required>{{title}}</textarea>
-              </div>
-              <div class="mb-3">
-                <label for="content">Content</label>
-                <textarea class="form-control" id="content" [(ngModel)]="content" name="content" required>{{content}}</textarea>
-              </div>
-              <div class="modal-footer">
+  <div class="row">
+    <div class="col-1">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary fixedTopLeft" data-toggle="modal" data-target="#exampleModalCenter">
+        New post
+      </button>
+    </div>
+    <div class="col-11">
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">New post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!--Form-->
+              <form class="was-validated">
+                <div class="mb-3">
+                  <label for="Title">Title</label>
+                  <textarea class="form-control" id="Title" [(ngModel)]="title" name="title"
+                    required>{{title}}</textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="content">Content</label>
+                  <textarea class="form-control" id="content" [(ngModel)]="content" name="content"
+                    required>{{content}}</textarea>
+                </div>
+                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary" (click)="addPost()" data-dismiss="modal">Post</button>
                 </div>
-            </form> <!--/Form-->
+              </form>
+              <!--/Form-->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-  
-  <div class="card w-80 container" *ngFor="let post of posts">
-      <div class="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">{{post.content}}</p>
-        <a href="#" class="btn btn-primary">Button</a>
+      <div class="card w-75 container rounded-pill myBorderTop10" *ngFor="let post of posts">
+        <div class="card-body myTextAlignCenter">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.content}}</p>
+        </div>
       </div>
+    </div>
   </div>
 </div>

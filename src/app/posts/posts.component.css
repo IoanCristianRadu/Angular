@@ -1,5 +1,8 @@
-.fixedTopLeft{
-    position: absolute;
-    top: 70px;
-    left: 10px;
+.myBorderTop10{
+    margin-top: 10px;
+    border-top-width: 2px;
+}
+
+.myTextAlignCenter{
+    text-align: center;
 }
