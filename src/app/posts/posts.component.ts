@@ -14,10 +14,8 @@ export class PostsComponent implements OnInit {
   myNgModel = "";
 
   constructor() {
-    this.posts.push(new Post("Title","Text1"));
-    this.posts.push(new Post("Title2","Text2"));
-    this.posts.push(new Post("Title3","Text3"));
-    this.posts.push(new Post("Title4","Text4"));
+    this.posts.push(new Post("My first post","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet enim eu lorem luctus pulvinar. Fusce interdum vestibulum convallis. Integer lacinia ut nulla vitae scelerisque. Phasellus tristique enim sed nisl viverra, et fermentum sem facilisis. Vivamus et nibh non quam aliquam iaculis id a lectus. Donec efficitur mattis massa, sed aliquet purus congue id. Morbi id molestie lacus, sit amet vehicula nisl. Etiam in tristique massa."));
+    this.posts.push(new Post("Amazing butterflies","Aren't butterflies amazing?"));
    }
 
   ngOnInit() {
