@@ -9,6 +9,8 @@ import { DataBindingCheatsheetComponent } from './data-binding-cheatsheet/data-b
 import { NewPostComponent } from './new-post/new-post.component';
 import { PostsComponent } from './posts/posts.component';
 import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AboutComponent } from './about/about.component';
     DataBindingCheatsheetComponent,
     NewPostComponent,
     PostsComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

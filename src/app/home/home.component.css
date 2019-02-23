@@ -1,3 +1,7 @@
+.myImageFit{
+    object-fit:cover;
+}
+
 .scrollspy-example-2 {
     position: relative;
     height: 350px;
