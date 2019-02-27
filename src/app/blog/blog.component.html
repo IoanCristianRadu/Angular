@@ -1,126 +1,116 @@
 <div class="container">
   <div class="container">
-    <div class="row mt-4">
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-1">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary fixedTopLeft" data-toggle="modal"
+          data-target="#exampleModalCenter">
+          New blog post
+        </button>
       </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
+      <div class="col-11">
+
+        <div class="row mt-4" *ngFor="let postSet of setsOfThreePosts">
+
+          <div class="col-sm">
+            <div class="card bg-dark text-white">
+              <img [src]="postSet.threeBlogPosts[0].photoURL" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">{{postSet.threeBlogPosts[0].title}}</h5>
+                <p class="card-text">{{postSet.threeBlogPosts[0].content}}</p>
+              </div>
+            </div>
           </div>
+
+          <div class="col-sm">
+            <div class="card bg-dark text-white">
+              <img [src]="postSet.threeBlogPosts[1].photoURL" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">{{postSet.threeBlogPosts[1].title}}</h5>
+                <p class="card-text">{{postSet.threeBlogPosts[1].content}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            <div class="card bg-dark text-white">
+              <img [src]="postSet.threeBlogPosts[2].photoURL" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">{{postSet.threeBlogPosts[2].title}}</h5>
+                <p class="card-text">{{postSet.threeBlogPosts[2].content}}</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
+
+        <div class="row mt-4" *ngIf="!blogPostOneIsNull">
+
+            <div class="col-sm align-self-start">
+              <div class="card bg-dark text-white">
+                <img [src]="blogPostOne.photoURL" id="imgOne" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{{blogPostOne.title}}</h5>
+                  <p class="card-text">{{blogPostOne.content}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm align-self-end" id="imgPlaceholder1" *ngIf="blogPostTwoIsNull"></div>
+            <div class="col-sm align-self-end" id="imgPlaceholder2" *ngIf="blogPostTwoIsNull"></div>
+
+            <div class="col-sm align-self-center" id="imgTwo" *ngIf="!blogPostTwoIsNull">
+              <div class="card bg-dark text-white">
+                <img [src]="blogPostTwo.photoURL" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{{blogPostTwo.title}}</h5>
+                  <p class="card-text">{{blogPostTwo.content}}</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm align-self-end" id="imgPlaceholder3" *ngIf="!blogPostTwoIsNull"></div>
+
         </div>
       </div>
     </div>
-    <div class="row mt-4">
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">New post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
+      <div class="modal-body">
+        <!--Form-->
+        <form class="was-validated">
+          <div class="mb-3">
+            <label for="Title">Title</label>
+            <textarea class="form-control" id="title" [(ngModel)]="title" name="title" required>{{title}}</textarea>
           </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card bg-dark text-white">
-          <img
-            src="https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Photos-Beautiful-HD-Download-PIC-WPD0012872.jpg"
-            class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
+          <div class="mb-3">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" [(ngModel)]="content" name="content"
+              required>{{content}}</textarea>
           </div>
-        </div>
+          <div class="mb-3">
+            <label for="content">photoURL</label>
+            <textarea class="form-control" id="photoURL" [(ngModel)]="photoURL" name="photoURL" required>{{photoURL}}</textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="addPost()" data-dismiss="modal">Post</button>
+          </div>
+        </form>
+        <!--/Form-->
       </div>
     </div>
   </div>
